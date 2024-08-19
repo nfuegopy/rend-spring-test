@@ -6,5 +6,5 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 
 # Etapa de ejecución
 FROM openjdk:21-jdk-slim
-COPY --from=build /home/app/target/*.jar app.jar
+COPY --from=build /home/app/target/*.jar bookapi-0.0.1-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
